@@ -1,4 +1,7 @@
 # LTCSDL_TK73_Nhom10_
-## Giới thiệu 
+## Giới thiệu: 
 ## Thành viên:
-- Ngô thị huỳnh như 
+- NGÔ THỊ HUỲNH NHƯ
+- NGÔ THỊ HOÀI
+- ĐẶNG THỊ MỸ TIÊN
+- TRƯƠNG QUỐC THẢO
