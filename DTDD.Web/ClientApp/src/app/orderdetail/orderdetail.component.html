@@ -1,0 +1,88 @@
+
+<h1 id="tableLabel">Orderdetail</h1>
+
+
+<p *ngIf="!Orderdetails"><em>Loading...</em></p>
+<button class="btn btn-primary" (click)="openModal(true,null)">Add new Orderdetail</button>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="Orderdetails.totalRecord>0">
+  <thead>
+    <tr>
+      <th>Orderdetail ID</th>
+      <th>Order ID</th>
+      <th>Product ID</th>
+      <th>Price</th>
+      <th>Sale Quantity</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody> 
+    <tr *ngFor="let p of Orderdetails.data; index as i;">
+      <td>{{ p.orderDetailId }}</td>
+      <td>{{ p.orderId}}</td>
+      <td>{{ p.productId }}</td>
+      <td>{{ p.price }}</td>
+      <td>{{ p.saleQuantity }}</td>
+      
+      <td>
+        <button class="btn btn-info btm-sm" (click)="openModal(false,i)">Edit</button>
+        <button class="btn btn-danger btm-sm" (click)="deleteOrderdetail(i)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<ul class="pagination">
+    <li class="page-item"><a class="page-link" href="javascript:void(0);" (click)="searchPrevious()"> Previous </a>
+    </li>
+    <li class="page-item"><a class="page-link">{{ Orderdetails.page }}</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="javascript:void(0);" (click)="searchNext()"> Next </a>
+    </li>
+</ul>
+
+<div class="modal fade"  id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"  *ngIf= "!isEdit" >Add new Orderdetail</h5>
+        <h5 class="modal-title"  *ngIf= "isEdit" >Edit Orderdetail</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <div class="modal-body">
+  <div class="row" >
+          <div class="col-4">Orderdetail ID</div>
+          <div class="col-8"><input class="form-control"[(ngModel)]="Orderdetail.orderDetailId"></div>
+    </div>
+    <br/>
+  <div class="row">
+          <div class="col-4">Order ID</div>
+          <div class="col-8"><input class="form-control"[(ngModel)]="Orderdetail.orderId"></div>
+    </div>
+    <br/>
+  <div class="row">
+          <div class="col-4">Product ID</div>
+          <div class="col-8"><input class="form-control"[(ngModel)]="Orderdetail.productId"></div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-4">Price</div>
+            <div class="col-8"><input class="form-control"[(ngModel)]="Orderdetail.price"></div>
+          </div>
+          <br/>
+          <div class="row">
+            <div class="col-4">Sale Quantity</div>
+            <div class="col-8"><input class="form-control"[(ngModel)]="Orderdetail.saleQuantity"></div>
+          </div>
+          <br/>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="UpdateOrderdetail()">Save</button>
+        <button type="button" class="btn btn-success" (click)="addOrderdetail()">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+

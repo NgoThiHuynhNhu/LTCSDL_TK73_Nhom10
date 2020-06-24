@@ -1,0 +1,15 @@
+D:\DTDD\DTDD\DTDD.DAL\bin\Debug\netcoreapp3.1\DTDD.DAL.deps.json
+D:\DTDD\DTDD\DTDD.DAL\bin\Debug\netcoreapp3.1\DTDD.DAL.dll
+D:\DTDD\DTDD\DTDD.DAL\obj\Debug\netcoreapp3.1\DTDD.DAL.AssemblyInfoInputs.cache
+D:\DTDD\DTDD\DTDD.DAL\obj\Debug\netcoreapp3.1\DTDD.DAL.AssemblyInfo.cs
+D:\DTDD\DTDD\DTDD.DAL\obj\Debug\netcoreapp3.1\DTDD.DAL.csprojAssemblyReference.cache
+D:\DTDD\DTDD\DTDD.DAL\bin\Debug\netcoreapp3.1\DTDD.DAL.runtimeconfig.json
+D:\DTDD\DTDD\DTDD.DAL\bin\Debug\netcoreapp3.1\DTDD.DAL.runtimeconfig.dev.json
+D:\DTDD\DTDD\DTDD.DAL\bin\Debug\netcoreapp3.1\DTDD.DAL.pdb
+D:\DTDD\DTDD\DTDD.DAL\obj\Debug\netcoreapp3.1\DTDD.DAL.csproj.CoreCompileInputs.cache
+D:\DTDD\DTDD\DTDD.DAL\obj\Debug\netcoreapp3.1\DTDD.DAL.dll
+D:\DTDD\DTDD\DTDD.DAL\obj\Debug\netcoreapp3.1\DTDD.DAL.pdb
+D:\DTDD\DTDD\DTDD.DAL\obj\Debug\netcoreapp3.1\DTDD.DAL.genruntimeconfig.cache
+D:\DTDD\DTDD\DTDD.DAL\bin\Debug\netcoreapp3.1\DTDD.Common.dll
+D:\DTDD\DTDD\DTDD.DAL\bin\Debug\netcoreapp3.1\DTDD.Common.pdb
+D:\DTDD\DTDD\DTDD.DAL\obj\Debug\netcoreapp3.1\DTDD.DAL.csproj.CopyComplete

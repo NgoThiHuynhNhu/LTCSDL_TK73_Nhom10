@@ -1,0 +1,96 @@
+<h1 id="tableLabel">Order </h1>
+
+
+<p *ngIf="!orders"><em>Loading...</em></p>
+<button class="btn btn-primary" (click)="openModal(true,null)">Add new Order</button>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="orders.totalRecord>0">
+  <thead>
+    <tr>
+      <th>Order ID</th>
+      <th>Customer ID</th>
+      <th>Status ID</th>
+      <th>Deliverer ID</th>
+      <th>Total_Price</th>
+      <th>Delivery_Address</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody> 
+    <tr *ngFor="let p of orders.data; index as i;">
+      <td>{{ p.orderId }}</td>
+      <td>{{ p.customerId}}</td>
+      <td>{{ p.statusId }}</td>
+      <td>{{ p.delivererId }}</td>
+      <td>{{ p.totalPrice }}</td>
+      <td>{{ p.deliveryAddress }}</td>
+      
+
+      
+      <td>
+        <button class="btn btn-info btm-sm" (click)="openModal(false,i)">Edit</button>
+        <button class="btn btn-danger btm-sm" (click)="deleteOrder(i)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<ul class="pagination">
+    <li class="page-item"><a class="page-link" href="javascript:void(0);" (click)="searchPrevious()"> Previous </a>
+    </li>
+    <li class="page-item"><a class="page-link">{{ orders.page }}</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="javascript:void(0);" (click)="searchNext()"> Next </a>
+    </li>
+</ul>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"  *ngIf= "!isEdit" >Add new Order</h5>
+        <h5 class="modal-title"  *ngIf= "isEdit" >Edit Order</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <div class="modal-body">
+  <div class="row" >
+          <div class="col-4">Order ID</div>
+          <div class="col-8"><input class="form-control"[(ngModel)]="order.orderId"></div>
+    </div>
+    <br/>
+  <div class="row">
+          <div class="col-4">Customer ID</div>
+          <div class="col-8"><input class="form-control"[(ngModel)]="order.customerId"></div>
+    </div>
+    <br/>
+  <div class="row">
+          <div class="col-4">Status ID</div>
+          <div class="col-8"><input class="form-control"[(ngModel)]="order.statusId"></div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-4">Deliverer ID</div>
+            <div class="col-8"><input class="form-control"[(ngModel)]="order.delivererId"></div>
+          </div>
+          <br/> 
+          <div class="row">
+            <div class="col-4">Total_Price</div>
+            <div class="col-8"><input class="form-control"[(ngModel)]="order.totalPrice"></div>
+          </div>
+          <br/>
+          <div class="row">
+            <div class="col-4">Delivery_Address</div>
+            <div class="col-8"><input class="form-control"[(ngModel)]="order.deliveryAddress"></div>
+          </div>
+          <br/>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="UpdateOrder()">Save</button>
+        <button type="button" class="btn btn-success" (click)="addOrder()">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+

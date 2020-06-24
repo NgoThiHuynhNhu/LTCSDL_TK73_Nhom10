@@ -1,0 +1,8 @@
+D:\DTDD\DTDD\DTDD.Common\bin\Debug\netcoreapp3.1\DTDD.Common.deps.json
+D:\DTDD\DTDD\DTDD.Common\bin\Debug\netcoreapp3.1\DTDD.Common.dll
+D:\DTDD\DTDD\DTDD.Common\obj\Debug\netcoreapp3.1\DTDD.Common.AssemblyInfoInputs.cache
+D:\DTDD\DTDD\DTDD.Common\obj\Debug\netcoreapp3.1\DTDD.Common.AssemblyInfo.cs
+D:\DTDD\DTDD\DTDD.Common\bin\Debug\netcoreapp3.1\DTDD.Common.pdb
+D:\DTDD\DTDD\DTDD.Common\obj\Debug\netcoreapp3.1\DTDD.Common.csproj.CoreCompileInputs.cache
+D:\DTDD\DTDD\DTDD.Common\obj\Debug\netcoreapp3.1\DTDD.Common.dll
+D:\DTDD\DTDD\DTDD.Common\obj\Debug\netcoreapp3.1\DTDD.Common.pdb

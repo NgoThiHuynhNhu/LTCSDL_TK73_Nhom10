@@ -1,0 +1,85 @@
+<h1 id="tableLabel">Product</h1>
+
+
+<p *ngIf="!products"><em>Loading...</em></p>
+<button class="btn btn-primary" (click)="openModal(true,null)">Add new Product</button>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="products.totalRecord>0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>ProductName</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody> 
+    <tr *ngFor="let p of products.data; index as i;">
+      <td>{{ p.id }}</td>
+      <td>{{ p.productName}}</td>
+      <td>{{ p.title }}</td>
+      <td>{{ p.description }}</td>
+      <td>{{ p.price }}</td>
+      <td>
+        <button class="btn btn-info btm-sm" (click)="openModal(false,i)">Edit</button>
+        <button class="btn btn-danger btm-sm" (click)="deleteProduct(i)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<ul class="pagination">
+    <li class="page-item"><a class="page-link" href="javascript:void(0);" (click)="searchPrevious()"> Previous </a>
+    </li>
+    <li class="page-item"><a class="page-link">{{ products.page }}</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="javascript:void(0);" (click)="searchNext()"> Next </a>
+    </li>
+</ul>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"  *ngIf= "!isEdit" >Add new Product</h5>
+        <h5 class="modal-title"  *ngIf= "isEdit" >Edit Product</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <div class="modal-body">
+  <div class="row" >
+          <div class="col-4">ID</div>
+          <div class="col-8"><input class="form-control"[(ngModel)]="product.id"></div>
+    </div>
+    <br/>
+  <div class="row">
+          <div class="col-4">Product Name</div>
+          <div class="col-8"><input class="form-control"[(ngModel)]="product.productName"></div>
+    </div>
+    <br/>
+  <div class="row">
+          <div class="col-4">Title</div>
+          <div class="col-8"><input class="form-control"[(ngModel)]="product.title"></div>
+        </div>
+        <br/>
+        <div class="row">
+          <div class="col-4">Description</div>
+          <div class="col-8"><input class="form-control"[(ngModel)]="product.description"></div>
+        </div>
+        <br/>
+      <div class="row">
+          <div class="col-4">Price</div>
+          <div class="col-8"><input class="form-control"[(ngModel)]="product.price"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="UpdateProduct()">Save</button>
+        <button type="button" class="btn btn-success" (click)="addProduct()">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+

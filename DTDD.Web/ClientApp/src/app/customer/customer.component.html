@@ -1,0 +1,82 @@
+<h1 id="tableLabel">Customer</h1>
+
+
+<p *ngIf="!customers"><em>Loading...</em></p>
+<button class="btn btn-primary" (click)="openModal(true,null)">Add new Customer</button>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="customers.totalRecord>0">
+  <thead>
+    <tr>
+      <th>Customer ID</th>
+      <th>Customer Name</th>
+      <th>Customer Phone</th>
+      <th>Customer Mail</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody> 
+    <tr *ngFor="let p of customers.data; index as i;">
+      <td>{{ p.customerId }}</td>
+      <td>{{ p.customerName}}</td>
+      <td>{{ p.customerPhone }}</td>
+      <td>{{ p.customerMail }}</td>
+      
+      <td>
+        <button class="btn btn-info btm-sm" (click)="openModal(false,i)">Edit</button>
+        <button class="btn btn-danger btm-sm" (click)="deleteCustomer(i)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<ul class="pagination">
+    <li class="page-item"><a class="page-link" href="javascript:void(0);" (click)="searchPrevious()"> Previous </a>
+    </li>
+    <li class="page-item"><a class="page-link">{{ customers.page }}</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="javascript:void(0);" (click)="searchNext()"> Next </a>
+    </li>
+</ul>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"  *ngIf= "!isEdit" >Add new Customer</h5>
+        <h5 class="modal-title"  *ngIf= "isEdit" >Edit Customer</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <div class="modal-body">
+  <div class="row" >
+          <div class="col-4">Customer ID</div>
+          <div class="col-8"><input class="form-control"[(ngModel)]="customer.customerId"></div>
+    </div>
+    <br/>
+  <div class="row">
+          <div class="col-4">Customer Name</div>
+          <div class="col-8"><input class="form-control"[(ngModel)]="customer.customerName"></div>
+    </div>
+    <br/>
+  <div class="row">
+          <div class="col-4">Customer Phone</div>
+          <div class="col-8"><input class="form-control"[(ngModel)]="customer.customerPhone"></div>
+        </div>
+        <br/>
+    <div class="row">
+            <div class="col-4">Customer Mail</div>
+            <div class="col-8"><input class="form-control"[(ngModel)]="customer.customerMail"></div>
+          </div>
+          <br/>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="UpdateCustomer()">Save</button>
+        <button type="button" class="btn btn-success" (click)="addCustomer()">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
